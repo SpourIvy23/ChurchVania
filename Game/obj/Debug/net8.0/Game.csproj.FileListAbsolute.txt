@@ -12,3 +12,4 @@ C:\Users\j02\Documents\Murilo\MeuRepositorio\ChuchVania\Game\obj\Debug\net8.0\re
 C:\Users\j02\Documents\Murilo\MeuRepositorio\ChuchVania\Game\obj\Debug\net8.0\Game.pdb
 C:\Users\j02\Documents\Murilo\MeuRepositorio\ChuchVania\Game\obj\Debug\net8.0\Game.genruntimeconfig.cache
 C:\Users\j02\Documents\Murilo\MeuRepositorio\ChuchVania\Game\obj\Debug\net8.0\ref\Game.dll
+C:\Users\j02\Documents\Murilo\MeuRepositorio\ChuchVania\game\obj\Debug\net8.0\Game.sourcelink.json

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\j02\\Documents\\Murilo\\MeuRepositorio\\ChuchVania\\Game\\Game.csproj": {}
+    "C:\\Users\\j02\\Documents\\Murilo\\MeuRepositorio\\ChuchVania\\game\\Game.csproj": {}
   },
   "projects": {
-    "C:\\Users\\j02\\Documents\\Murilo\\MeuRepositorio\\ChuchVania\\Game\\Game.csproj": {
+    "C:\\Users\\j02\\Documents\\Murilo\\MeuRepositorio\\ChuchVania\\game\\Game.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\j02\\Documents\\Murilo\\MeuRepositorio\\ChuchVania\\Game\\Game.csproj",
+        "projectUniqueName": "C:\\Users\\j02\\Documents\\Murilo\\MeuRepositorio\\ChuchVania\\game\\Game.csproj",
         "projectName": "Game",
-        "projectPath": "C:\\Users\\j02\\Documents\\Murilo\\MeuRepositorio\\ChuchVania\\Game\\Game.csproj",
+        "projectPath": "C:\\Users\\j02\\Documents\\Murilo\\MeuRepositorio\\ChuchVania\\game\\Game.csproj",
         "packagesPath": "C:\\Users\\j02\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\j02\\Documents\\Murilo\\MeuRepositorio\\ChuchVania\\Game\\obj\\",
+        "outputPath": "C:\\Users\\j02\\Documents\\Murilo\\MeuRepositorio\\ChuchVania\\game\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\j02\\AppData\\Roaming\\NuGet\\NuGet.Config",
