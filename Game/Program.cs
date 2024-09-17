@@ -91,6 +91,6 @@ class Program
             Console.ReadLine();
             System.Console.WriteLine("Eu fui transformado nessa criatura terrivel por um feiticeiro maligno!");
             Console.ReadLine();
-            System.Console.WriteLine("Eu estou aqui para guiar você durante essa terrivel e perigosa jornada..");
+            System.Console.WriteLine("Eu estou aqui para guiar você durante essa terrivel e perigosa jornada...");
     }
 }
