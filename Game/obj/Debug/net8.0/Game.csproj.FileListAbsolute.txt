@@ -13,3 +13,33 @@ C:\Users\j02\Documents\Murilo\MeuRepositorio\ChuchVania\Game\obj\Debug\net8.0\Ga
 C:\Users\j02\Documents\Murilo\MeuRepositorio\ChuchVania\Game\obj\Debug\net8.0\Game.genruntimeconfig.cache
 C:\Users\j02\Documents\Murilo\MeuRepositorio\ChuchVania\Game\obj\Debug\net8.0\ref\Game.dll
 C:\Users\j02\Documents\Murilo\MeuRepositorio\ChuchVania\game\obj\Debug\net8.0\Game.sourcelink.json
+C:\Users\Murilo\Desktop\codigos\jogo e tal\ChurchVania\Game\bin\Debug\net8.0\Game.exe
+C:\Users\Murilo\Desktop\codigos\jogo e tal\ChurchVania\Game\bin\Debug\net8.0\Game.deps.json
+C:\Users\Murilo\Desktop\codigos\jogo e tal\ChurchVania\Game\bin\Debug\net8.0\Game.runtimeconfig.json
+C:\Users\Murilo\Desktop\codigos\jogo e tal\ChurchVania\Game\bin\Debug\net8.0\Game.dll
+C:\Users\Murilo\Desktop\codigos\jogo e tal\ChurchVania\Game\bin\Debug\net8.0\Game.pdb
+C:\Users\Murilo\Desktop\codigos\jogo e tal\ChurchVania\Game\obj\Debug\net8.0\Game.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Murilo\Desktop\codigos\jogo e tal\ChurchVania\Game\obj\Debug\net8.0\Game.AssemblyInfoInputs.cache
+C:\Users\Murilo\Desktop\codigos\jogo e tal\ChurchVania\Game\obj\Debug\net8.0\Game.AssemblyInfo.cs
+C:\Users\Murilo\Desktop\codigos\jogo e tal\ChurchVania\Game\obj\Debug\net8.0\Game.csproj.CoreCompileInputs.cache
+C:\Users\Murilo\Desktop\codigos\jogo e tal\ChurchVania\Game\obj\Debug\net8.0\Game.sourcelink.json
+C:\Users\Murilo\Desktop\codigos\jogo e tal\ChurchVania\Game\obj\Debug\net8.0\Game.dll
+C:\Users\Murilo\Desktop\codigos\jogo e tal\ChurchVania\Game\obj\Debug\net8.0\refint\Game.dll
+C:\Users\Murilo\Desktop\codigos\jogo e tal\ChurchVania\Game\obj\Debug\net8.0\Game.pdb
+C:\Users\Murilo\Desktop\codigos\jogo e tal\ChurchVania\Game\obj\Debug\net8.0\Game.genruntimeconfig.cache
+C:\Users\Murilo\Desktop\codigos\jogo e tal\ChurchVania\Game\obj\Debug\net8.0\ref\Game.dll
+C:\Users\Murilo\Desktop\codigos\ChurchVania\game\bin\Debug\net8.0\Game.exe
+C:\Users\Murilo\Desktop\codigos\ChurchVania\game\bin\Debug\net8.0\Game.deps.json
+C:\Users\Murilo\Desktop\codigos\ChurchVania\game\bin\Debug\net8.0\Game.runtimeconfig.json
+C:\Users\Murilo\Desktop\codigos\ChurchVania\game\bin\Debug\net8.0\Game.dll
+C:\Users\Murilo\Desktop\codigos\ChurchVania\game\bin\Debug\net8.0\Game.pdb
+C:\Users\Murilo\Desktop\codigos\ChurchVania\game\obj\Debug\net8.0\Game.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Murilo\Desktop\codigos\ChurchVania\game\obj\Debug\net8.0\Game.AssemblyInfoInputs.cache
+C:\Users\Murilo\Desktop\codigos\ChurchVania\game\obj\Debug\net8.0\Game.AssemblyInfo.cs
+C:\Users\Murilo\Desktop\codigos\ChurchVania\game\obj\Debug\net8.0\Game.csproj.CoreCompileInputs.cache
+C:\Users\Murilo\Desktop\codigos\ChurchVania\game\obj\Debug\net8.0\Game.sourcelink.json
+C:\Users\Murilo\Desktop\codigos\ChurchVania\game\obj\Debug\net8.0\Game.dll
+C:\Users\Murilo\Desktop\codigos\ChurchVania\game\obj\Debug\net8.0\refint\Game.dll
+C:\Users\Murilo\Desktop\codigos\ChurchVania\game\obj\Debug\net8.0\Game.pdb
+C:\Users\Murilo\Desktop\codigos\ChurchVania\game\obj\Debug\net8.0\Game.genruntimeconfig.cache
+C:\Users\Murilo\Desktop\codigos\ChurchVania\game\obj\Debug\net8.0\ref\Game.dll
