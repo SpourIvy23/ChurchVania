@@ -58,3 +58,8 @@ C:\Users\nobre\Desktop\games maneiros\ChurchVania\game\obj\Debug\net8.0\refint\G
 C:\Users\nobre\Desktop\games maneiros\ChurchVania\game\obj\Debug\net8.0\Game.pdb
 C:\Users\nobre\Desktop\games maneiros\ChurchVania\game\obj\Debug\net8.0\Game.genruntimeconfig.cache
 C:\Users\nobre\Desktop\games maneiros\ChurchVania\game\obj\Debug\net8.0\ref\Game.dll
+C:\Users\Murilo\Desktop\codigos\ChurchVania\Game\build\Game.exe
+C:\Users\Murilo\Desktop\codigos\ChurchVania\Game\build\Game.deps.json
+C:\Users\Murilo\Desktop\codigos\ChurchVania\Game\build\Game.runtimeconfig.json
+C:\Users\Murilo\Desktop\codigos\ChurchVania\Game\build\Game.dll
+C:\Users\Murilo\Desktop\codigos\ChurchVania\Game\build\Game.pdb

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nobre\\Desktop\\games maneiros\\ChurchVania\\game\\Game.csproj": {}
+    "C:\\Users\\Murilo\\Desktop\\codigos\\ChurchVania\\Game\\Game.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nobre\\Desktop\\games maneiros\\ChurchVania\\game\\Game.csproj": {
+    "C:\\Users\\Murilo\\Desktop\\codigos\\ChurchVania\\Game\\Game.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nobre\\Desktop\\games maneiros\\ChurchVania\\game\\Game.csproj",
+        "projectUniqueName": "C:\\Users\\Murilo\\Desktop\\codigos\\ChurchVania\\Game\\Game.csproj",
         "projectName": "Game",
-        "projectPath": "C:\\Users\\nobre\\Desktop\\games maneiros\\ChurchVania\\game\\Game.csproj",
-        "packagesPath": "C:\\Users\\nobre\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nobre\\Desktop\\games maneiros\\ChurchVania\\game\\obj\\",
+        "projectPath": "C:\\Users\\Murilo\\Desktop\\codigos\\ChurchVania\\Game\\Game.csproj",
+        "packagesPath": "C:\\Users\\Murilo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Murilo\\Desktop\\codigos\\ChurchVania\\Game\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\nobre\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Murilo\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
