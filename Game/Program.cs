@@ -55,7 +55,7 @@ class Program
                     PrimeiroAndar();
                     SegundoAndar();
                     TerceiroAndar();
-                    TesteForça();
+                    Ashley();
                     Topo();
                     Creditos();
 
@@ -204,6 +204,7 @@ class Program
         Console.ReadLine();
         while (progressao)
         {
+            Console.Clear();
 
             System.Console.WriteLine("Escolha oque fazer \n" +
             "1-Sala da esquerda \n" +
@@ -252,6 +253,7 @@ class Program
         Console.ReadLine();
         while (progressao)
         {
+            Console.Clear();
             Console.WriteLine("O que vai fazer agora? \n" +
             "1-Explorar em baixo do tapete \n" +
             "2-Explorar os móveis antigos \n" +
@@ -309,6 +311,7 @@ class Program
         System.Console.WriteLine("Você encontra uma sala esquisita, ela tem uma porta velha nos fundos e algumas prateleiras de madeira velha a sua esquerda ");
         while (stay)
         {
+            Console.Clear();
             System.Console.WriteLine("O que vai fazer agora? \n" +
             "1-Tentar abrir porta \n" +
             "2-Vasculhar pratileiras \n" +
@@ -376,6 +379,7 @@ class Program
         bool progressao = true;
         while (progressao)
         {
+            Console.Clear();
             System.Console.WriteLine("Você sobe as escadas para o segundo andar \n" +
             "Uma cheia de fileiras de bancos aonde as pessoas provavelmente vinham para ouvir o padre \n" +
             "Há uma porta atrás do púlpito, o lugar aonde devia estar o padre e duas portas em cada lateral da sala \n");
@@ -411,6 +415,7 @@ class Program
         bool progressao = true;
         while (progressao)
         {
+            Console.Clear();
             System.Console.WriteLine("Você se encontra numa parte escura da igreja aonde várias sacolas brancas amarradas em uma forca cada uma delas tem um alvo no meio \n" +
             "O que você fará agora? \n" +
             "1-Atirar em um do alvos \n" +
@@ -486,6 +491,7 @@ class Program
         bool progressao = true;
         while (progressao)
         {
+            Console.Clear();
             System.Console.WriteLine("Você entra no que parece ser uma catina..tem pedaços de comida jogado para lá e para cá e lá \n" +
             "O que você fará agora? \n" +
                 "1-Vasculhar o lixo \n" +
@@ -546,6 +552,7 @@ class Program
     {
         int escolha;
         {
+            Console.Clear();
             System.Console.WriteLine("Você entra numa sala que parece levar para as escadas do proximo andar..mas você não tem certeza se deve entrar \n" +
         "Você escuta alguns barulhos vindo de lá, e se for algo perigoso? \n" +
         "O que você fará agora? \n" +
@@ -560,8 +567,9 @@ class Program
                 case 2:
                     SegundoAndar();
                     break;
-                default: Sala6();
-                break;
+                default:
+                    Sala6();
+                    break;
             }
         }
     }
@@ -575,6 +583,7 @@ class Program
         Console.ReadLine();
         while (progressao)
         {
+            Console.Clear();
             System.Console.WriteLine("O que você vai fazer? \n" +
             "1-Sala da esquerda \n" +
             "2-Sala da direita \n" +
@@ -607,6 +616,7 @@ class Program
         Console.ReadLine();
         while (progressao)
         {
+            Console.Clear();
             Console.WriteLine("O que vai fazer agora? \n" +
             "1- Pintura \n" +
             "2- Armário antigo \n" +
@@ -643,7 +653,7 @@ class Program
                         eventosConcluidos[12] = true;
                     }
 
-                    else 
+                    else
                     {
                         Console.Clear();
                         System.Console.WriteLine("Você devia vandalizar o papel.");
@@ -667,6 +677,7 @@ class Program
         System.Console.WriteLine("Você entra em uma sala grotesca. No centro, um coração ainda pulsando está suspenso por correntes. Há uma prateleira antiga cheia de objetos estranhos.");
         while (stay)
         {
+            Console.Clear();
             System.Console.WriteLine("O que vai fazer agora? \n" +
             "1- Examinar o coração pulsante \n" +
             "2- Vasculhar a prateleira \n" +
@@ -763,23 +774,29 @@ class Program
         if (ItemChave("Moedas", 5))
         {
             int escolha;
-
-            System.Console.WriteLine("Zumbi:Que que ce acha? \n" +
-            "1-Pagar \n" +
-            "2-Não entregar nada \n");
-            int.TryParse(Console.ReadLine(), out escolha);
-            switch (escolha)
+            bool progressao = true;
+            while (progressao)
             {
-                case 1:
-                    Roleta();
-                    break;
-                case 2:
-                    System.Console.WriteLine("Zumbi:Escolha errada pivete!!!");
-                    Console.ReadLine();
-                    BossRaquel();
-                    break;
-                default: System.Console.WriteLine("Zumbi:VAI SE DECIDIR NÃO PIVETE?!?!");
-                break;
+                System.Console.WriteLine("Zumbi:Que que ce acha? \n" +
+                "1-Pagar \n" +
+                "2-Não entregar nada \n");
+                int.TryParse(Console.ReadLine(), out escolha);
+                switch (escolha)
+                {
+                    case 1:
+                        Roleta();
+                        progressao = false;
+                        break;
+                    case 2:
+                        System.Console.WriteLine("Zumbi:Escolha errada pivete!!!");
+                        Console.ReadLine();
+                        BossRaquel();
+                        progressao = false;
+                        break;
+                    default:
+                        System.Console.WriteLine("Zumbi:VAI SE DECIDIR NÃO PIVETE?!?!");
+                        break;
+                }
             }
 
         }
@@ -822,22 +839,23 @@ class Program
             int.TryParse(Console.ReadLine(), out escolha);
             switch (escolha)
             {
-                case 1:if(ItemChave("Moedas", 5))
-                {
-                    Console.Clear();
-                    System.Console.WriteLine("Zumbi:Poxa..Acho que você não dá tanto valor assim pra vida");
-                    Console.ReadLine();
-                    Inventory("Moedas", -5);
-                    Console.ReadLine();
-                    System.Console.WriteLine("Ela esvaziou um dos tambores");
-                    espaçosVazios = 1;
-                    Console.ReadLine();
-                    progressao = false;
-                }
-                else
-                {
-                    System.Console.WriteLine("voce nao vai ver isso");
-                }
+                case 1:
+                    if (ItemChave("Moedas", 5))
+                    {
+                        Console.Clear();
+                        System.Console.WriteLine("Zumbi:Poxa..Acho que você não dá tanto valor assim pra vida");
+                        Console.ReadLine();
+                        Inventory("Moedas", -5);
+                        Console.ReadLine();
+                        System.Console.WriteLine("Ela esvaziou um dos tambores");
+                        espaçosVazios = 1;
+                        Console.ReadLine();
+                        progressao = false;
+                    }
+                    else
+                    {
+                        System.Console.WriteLine("voce nao vai ver isso");
+                    }
                     break;
                 case 2:
                     if (ItemChave("Moedas", 10))
@@ -919,7 +937,7 @@ class Program
             Console.ReadLine();
             System.Console.WriteLine("Você levou um tiro!!! \n" +
             "-15 de vida");
-            vida-=15;
+            vida -= 15;
             Console.ReadLine();
             BossRaquel();
         }
@@ -933,6 +951,7 @@ class Program
         bool stay = true;
         while (stay)
         {
+            Console.Clear();
             System.Console.WriteLine("1-Status \n" +
             "2-Inventario \n" +
             "3-Equipar item \n" +
@@ -1088,8 +1107,10 @@ class Program
 
             if (!string.IsNullOrEmpty(equipamentoAtual))
             {
+
                 RemoverBonus(equipamentoAtual); // Remove bônus do equipamento atual
                 Console.WriteLine($"{equipamentoAtual} desequipado.");
+                Console.ReadLine();
             }
 
             // Aplica o bônus e define o equipamento atual
@@ -1100,6 +1121,7 @@ class Program
                     penalidade = 0;
                     equipamentoAtual = "espada";
                     Console.WriteLine("Você equipou a Espada. +20 de força!");
+                    Console.ReadLine();
                     break;
 
                 case "machado":
@@ -1107,6 +1129,7 @@ class Program
                     penalidade = 10;
                     equipamentoAtual = "machado";
                     Console.WriteLine("Você equipou o Machado. +30 de força e -10 de velocidade!");
+                    Console.ReadLine();
                     break;
 
                 case "kunai":
@@ -1114,12 +1137,14 @@ class Program
                     penalidade = 0;
                     equipamentoAtual = "kunai";
                     Console.WriteLine("Você equipou a Kunai. +10 de força!");
+                    Console.ReadLine();
                     break;
                 case "pistola":
                     bonus = 40;
                     penalidade = 20;
                     equipamentoAtual = "pistola";
                     System.Console.WriteLine("Você equipou a Pistola. +40 de força e -20 de velocidade!");
+                    Console.ReadLine();
                     break;
 
                 default:
@@ -1130,6 +1155,7 @@ class Program
         else
         {
             Console.WriteLine("Você não tem este equipamento no inventário.");
+            Console.ReadLine();
         }
     }
 
@@ -1178,6 +1204,7 @@ class Program
         Console.ReadLine();
         while (!vitoria)
         {
+            Console.Clear();
             System.Console.WriteLine("Realizando teste..");
             Console.ReadLine();
             int resultadoDado = random.Next(1, 21);
@@ -1186,7 +1213,7 @@ class Program
             {
                 resultadoFinal += velocidadeTotal;
             }
-
+            Console.Clear();
             System.Console.WriteLine("Você tirou... " + resultadoFinal + "!");
             Console.ReadLine();
             if (resultadoDado == 20)
@@ -1260,6 +1287,7 @@ class Program
                 }
                 else
                 {
+                    Console.Clear();
 
                     System.Console.WriteLine("Você falhou!!");
                     System.Console.ReadLine();
@@ -1287,77 +1315,49 @@ class Program
         Console.ReadLine();
         Creditos();
         Console.ReadLine();
+        Environment.Exit(0);
         play = false;
 
     }
-    static void TesteForça()
+    static void Ashley()
     {
-        Random random = new Random();
-        int resultadosComuns = 0;
-        bool venceu = false;
-
-
-        Console.WriteLine("No meio do caminho você se encontra com uma demonia atrás de uma barreira magica \n" +
-        "Ela não deixará você passar..você vai ter que destruir a barreira se quiser chegar até o feiticeiro maligno.. \n" +
-        "Você deverá realizar agora um teste de força!!");
+        int nucleoCorreto = random.Next(1, 6);
+        bool acertou = false;
+        int palpite = 0;
+        System.Console.WriteLine("Você encontra uma barreira bloqueando o seu caminho para o topo..atrás dela uma demonio conjurando uma magia para manter a barreira levantada..");
+        System.Console.WriteLine("Ache o núcleo da barreira!!");
         Console.ReadLine();
-
-        while (!venceu)
+        while (vida > 0 && !acertou)
         {
-            Console.WriteLine("\nRealizando teste...");
-            Console.ReadLine();
 
+                    Console.WriteLine("Digite um número entre 1 e 5:");
 
-            int resultadoDado = random.Next(1, 21);
-            int resultadoFinal = resultadoDado;
-
-
-            if (resultadoDado != 20)
+            if (int.TryParse(Console.ReadLine(), out palpite) && palpite >= 1 && palpite <= 5)
             {
-                resultadoFinal += forçaTotal;
+
+                
+                int.TryParse(Console.ReadLine(), out palpite);
             }
 
-            Console.WriteLine($"Você rolou: {resultadoDado}");
-            Console.WriteLine($"Resultado final foi {resultadoFinal}");
-            Console.ReadLine();
-
-            if (resultadoDado == 20)
+            if (palpite == nucleoCorreto)
             {
-
-                Console.WriteLine("Sucesso crítico! Você quebrou a barreira com apenas um ataque!!!!");
-                Console.ReadLine();
-                venceu = true;
+                Console.WriteLine("Você acertou o núcleo! A barreira foi destruída.");
+                acertou = true;
             }
-            else if (resultadoFinal < 30)
+            else
             {
-                if (resultadoFinal < 20)
-                {
-
-                    resultadosComuns++;
-                    Console.WriteLine($"Resultado comum. Você tem {resultadosComuns} resultados comuns.");
-                    Console.ReadLine();
-
-
-                    if (resultadosComuns == 4)
-                    {
-                        Console.WriteLine("Você alcançou 4 resultados comuns e conseguiu quebrar a barreira!!");
-                        Console.ReadLine();
-                        venceu = true;
-                    }
-                }
-                else
-                {
-
-                    Console.WriteLine("Você falhou! Parece que a barreira absorve um pouco de sua vida com cada falha..");
-                    vida -= 40;
-                    if (vida <= 0)
-                    {
-                        GameOver();
-                    }
-                }
+                vida -= 45;
+                Console.WriteLine($"Errou! Você levou 35 de dano.");
             }
         }
+
+        if (vida <= 0)
+        {
+            GameOver();
+        }
     }
+    
+    
     static void Spades()
     {
         Random random = new Random();
@@ -1422,9 +1422,9 @@ class Program
     static void Creditos()
     {
         System.Console.WriteLine("A papaleguas production \n" +
-        "Murilo Pires-Programador,Roteirista, Design de personagem" +
+        "Murilo Pires-Programador,Roteirista, Design de personagem \n" +
         "Joanna Nobre-Programadora,Roteirista,Designer de personagem \n" +
-        "Arthur Gabriel-Programador \n" +
+        "Arthur Gabriel-Programador/Beta Tester \n" +
         "Alice-Supervisora \n" +
         "Hideo Kojima- Diretor do jogo \n");
     }
