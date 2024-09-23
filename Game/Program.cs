@@ -20,7 +20,7 @@ class Program
 
     static string equipamentoAtual = "";
     //Atributos + Buffs e Debuffs
-static int vidabase = 100;
+    static int vidabase = 100;
     static int vida = vidabase + bonus;
     static int defesa = 40;
     static int forcaBase = 50;
@@ -38,7 +38,7 @@ static int vidabase = 100;
     static void Main()
     {
         int menu;
-        
+
 
 
         while (play)
@@ -564,28 +564,32 @@ static int vidabase = 100;
         }
     }
     static void TerceiroAndar()
-    { int escolha;
-    bool progressao = true;
-    
+    {
+        int escolha;
+        bool progressao = true;
+
         System.Console.WriteLine("Ao subrir as escadas para o terceiro andar você se encontra com três salas \n" +
         "Uma na esquerda e outra na direita..e uma no meio..a que vai te levar até o topo da Igreja, se entrar nela não tem volta");
         Console.ReadLine();
-    while(progressao)
-        System.Console.WriteLine("O que você vai fazer? \n" +
-        "1-Sala da esquerda \n" +
-        "2-Sala da direita \n" +
-        "3-Sala do meio \n" +
-        "4-Abrir menu");
+        while (progressao)
+            System.Console.WriteLine("O que você vai fazer? \n" +
+            "1-Sala da esquerda \n" +
+            "2-Sala da direita \n" +
+            "3-Sala do meio \n" +
+            "4-Abrir menu");
         int.TryParse(Console.ReadLine(), out escolha);
-        switch(escolha)
+        switch (escolha)
         {
-            case 1: SalaSino();
-            break;
-            case 2:SalaCoracao();
-            break;
-            case 3:SalaFinal();
-            progressao = false;
-            break;
+            case 1:
+                SalaSino();
+                break;
+            case 2:
+                SalaCoracao();
+                break;
+            case 3:
+                SalaFinal();
+                progressao = false;
+                break;
 
         }
     }
@@ -634,10 +638,10 @@ static int vidabase = 100;
                                 System.Console.WriteLine("Você encontrou um pedaço de papel velho. pode escrever qualquer coisa nele. \n" +
                                 "Escreva algo!");
                                 papel = Console.ReadLine();
-                                
+
                             }
                             Inventory("Tinta", -1);
-                                Console.ReadLine();
+                            Console.ReadLine();
                         }
                         else if (eventosConcluidos[9])
                         {
@@ -687,15 +691,15 @@ static int vidabase = 100;
                     if (!eventosConcluidos[10])
                     {
                         System.Console.WriteLine("Ao tocar o coração, você sente uma força esquisita drenando sua energia. Algo está errado aqui...");
-                        vida -=20;
+                        vida -= 20;
                         Console.ReadLine();
-                        if(vida==0)
+                        if (vida == 0)
                         {
                             GameOver();
                         }
                         else
                         {
-                        eventosConcluidos[10] = true;
+                            eventosConcluidos[10] = true;
                         }
                     }
                     else
@@ -730,18 +734,29 @@ static int vidabase = 100;
         }
     }
     static void SalaFinal()
-    { 
+    {
         System.Console.WriteLine("Você se encontra na sala que talvez o leve para o final da igreja.. \n" +
         "Você vê um pequeno demoniozinho do lado com aparentemente uma loja de itens!");
         Console.ReadLine();
         System.Console.WriteLine("Mas parece ser tudo lixo inutil..é bom você seguir em frente");
         Console.ReadLine();
-          
+
     }
+    static void Topo()
 
-    //miniboss
+    {
+        System.Console.WriteLine("Você vê a demonia caída no chão após ter sido derrotada por você..acho que você está livre para seguir");
+        Console.ReadLine();
+        System.Console.WriteLine("Você lentamente anda os ultimos degraus de escada da igreja..até que você chega ao topo e se encontra com o feiticeiro.. \n");
+        System.Console.WriteLine("Feiticeiro:Então você chegou ein? \n" +
+        "Feiticeiro:Até que é impressionante você ter chegado aqui sem ter morrido no instante que pisou nesse lugar..como recompensa não vou te matar nesse exato segundo \n" +
+        "Feiticeiro:Eu proponho um jogo simples de pedra papel e tesoura..se você perder eu farei com que você seja queimado vivo..se não aceitar irei te matar nesse instante \n");
+        Console.ReadLine();
+        System.Console.WriteLine("Feiticeiro:Então vamos logo com isso");
+        Console.ReadLine();
+        Spades();
 
-
+    }
     //BossFight Raquel
     static void Raquel()
     {
@@ -1188,7 +1203,7 @@ static int vidabase = 100;
             {
                 if (resultadoFinal < 20)
                 {
-                    
+
                     resultadosComuns++;
                     Console.WriteLine($"Resultado comum. Você tem {resultadosComuns} resultados comuns.");
 
@@ -1197,7 +1212,7 @@ static int vidabase = 100;
                     {
                         Console.Clear();
                         Console.WriteLine("Você alcançou 4 resultados comuns e venceu!");
-                        if(equipamentoAtual == "espada" || equipamentoAtual == "machado")
+                        if (equipamentoAtual == "espada" || equipamentoAtual == "machado")
                         {
                             System.Console.WriteLine("Você usa sua arma para cortar a cabeça da zumbi fora! \n" +
                             "A cabeça sai voando para o chão e o corpo dela começa a andar por aí tentando recuperar a cabeça");
@@ -1205,7 +1220,7 @@ static int vidabase = 100;
                             System.Console.WriteLine("Zumbi:EI EI EI!! É AQUI SEU CORPO IDIOTA!!, VOCÊ VAI VER SÓ PIVETE!!");
                             Console.ReadLine();
                         }
-                        else if(equipamentoAtual == "kunai")
+                        else if (equipamentoAtual == "kunai")
                         {
                             System.Console.WriteLine("Você esfaqueia os dois olhos da zumbi que grita de dor e começa a dar socos no ar tentando te atingir");
                             Console.ReadLine();
@@ -1229,8 +1244,8 @@ static int vidabase = 100;
                     System.Console.ReadLine();
                     System.Console.WriteLine("Você levou 15 de dano!!!");
                     Console.ReadLine();
-                    vida-=15;
-                    if(vida==0)
+                    vida -= 15;
+                    if (vida == 0)
                     {
                         GameOver();
                     }
@@ -1250,14 +1265,14 @@ static int vidabase = 100;
         "Será que você conseguria..se tivesse mais uma chance?");
         Console.ReadLine();
         play = false;
-        
+
     }
     static void TesteForça()
     {
         Random random = new Random();
         int resultadosComuns = 0;
         bool venceu = false;
-    
+
 
         Console.WriteLine("No meio do caminho você se encontra com uma demonia atrás de uma barreira magica \n" +
         "Ela não deixará você passar..você vai ter que destruir a barreira se quiser chegar até o feiticeiro maligno.. \n" +
@@ -1308,8 +1323,8 @@ static int vidabase = 100;
                 {
                     // Falha
                     Console.WriteLine("Você falhou! Parece que a barreira absorve um pouco de sua vida com cada falha..");
-                    vida-=40;
-                    if(vida==0)
+                    vida -= 40;
+                    if (vida == 0)
                     {
                         GameOver();
                     }
@@ -1317,7 +1332,77 @@ static int vidabase = 100;
             }
         }
     }
-}
+    static void Spades()
+    {
+        Random random = new Random();
+        int jogadorVitorias = 0;
+        int feiticeiroVitorias = 0;
 
+        while (jogadorVitorias < 2 && feiticeiroVitorias < 2)
+        {
+            Console.Clear();
+            Console.WriteLine($"Rodada {jogadorVitorias + feiticeiroVitorias + 1}:");
+            Console.WriteLine("Escolha sua jogada:\n1 - Pedra\n2 - Papel\n3 - Tesoura");
+            int escolhaJogador;
+            int.TryParse(Console.ReadLine(), out escolhaJogador);
+
+            while (escolhaJogador < 1 || escolhaJogador > 3)
+            {
+                Console.WriteLine("Escolha inválida! Escolha:\n1 - Pedra\n2 - Papel\n3 - Tesoura");
+                int.TryParse(Console.ReadLine(), out escolhaJogador);
+            }
+
+            string[] opcoes = { "Pedra", "Papel", "Tesoura" };
+            int escolhaFeiticeiro = random.Next(1, 4);
+
+            Console.WriteLine($"Você escolheu: {opcoes[escolhaJogador - 1]}");
+            Console.WriteLine($"Feiticeiro escolheu: {opcoes[escolhaFeiticeiro - 1]}");
+
+            if (escolhaJogador == escolhaFeiticeiro)
+            {
+                Console.WriteLine("Empate!");
+            }
+            else if ((escolhaJogador == 1 && escolhaFeiticeiro == 3) ||
+                     (escolhaJogador == 2 && escolhaFeiticeiro == 1) ||
+                     (escolhaJogador == 3 && escolhaFeiticeiro == 2))
+            {
+                Console.WriteLine("Você venceu essa rodada!");
+                jogadorVitorias++;
+            }
+            else
+            {
+                Console.WriteLine("Feiticeiro venceu essa rodada!");
+                feiticeiroVitorias++;
+            }
+
+            Console.ReadLine();
+        }
+
+        if (jogadorVitorias > feiticeiroVitorias)
+        {
+            Console.WriteLine("Feiticeiro: Não! Não!!!! Eu não aceito isso! isso é Impossível! Como você conseguiu..");
+            Console.WriteLine("Você venceu o feiticeiro e tem seu final feliz. HOORAYY");
+        }
+        else
+        {
+            Console.WriteLine("Feiticeiro: HAHAHA! SEU BURRO LERO LERO LEROOOOOO Eu disse que nunca perco!! \n" +
+            "tá... agora se prepara para ser queimado vivo...");
+            Console.ReadLine();
+            GameOver();
+        }
+
+        Console.ReadLine();
+    }
+    static void Creditos()
+    {
+        System.Console.WriteLine("A papaleguas production \n" +
+        "Murilo Pires-Programador,Roteirista, Design de personagem" +
+        "Joanna Nobre-Programadora,Roteirista,Designer de personagem \n" +
+        "Arthur Gabriel-Programador \n" +
+        "Alice-Supervisora \n" +
+        "Davi Fortaleza- \n" +
+        "Hideo Kojima- Diretor \n");
+    }
+}
 
 

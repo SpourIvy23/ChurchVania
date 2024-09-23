@@ -43,3 +43,18 @@ C:\Users\Murilo\Desktop\codigos\ChurchVania\game\obj\Debug\net8.0\refint\Game.dl
 C:\Users\Murilo\Desktop\codigos\ChurchVania\game\obj\Debug\net8.0\Game.pdb
 C:\Users\Murilo\Desktop\codigos\ChurchVania\game\obj\Debug\net8.0\Game.genruntimeconfig.cache
 C:\Users\Murilo\Desktop\codigos\ChurchVania\game\obj\Debug\net8.0\ref\Game.dll
+C:\Users\nobre\Desktop\games maneiros\ChurchVania\game\build\Game.exe
+C:\Users\nobre\Desktop\games maneiros\ChurchVania\game\build\Game.deps.json
+C:\Users\nobre\Desktop\games maneiros\ChurchVania\game\build\Game.runtimeconfig.json
+C:\Users\nobre\Desktop\games maneiros\ChurchVania\game\build\Game.dll
+C:\Users\nobre\Desktop\games maneiros\ChurchVania\game\build\Game.pdb
+C:\Users\nobre\Desktop\games maneiros\ChurchVania\game\obj\Debug\net8.0\Game.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nobre\Desktop\games maneiros\ChurchVania\game\obj\Debug\net8.0\Game.AssemblyInfoInputs.cache
+C:\Users\nobre\Desktop\games maneiros\ChurchVania\game\obj\Debug\net8.0\Game.AssemblyInfo.cs
+C:\Users\nobre\Desktop\games maneiros\ChurchVania\game\obj\Debug\net8.0\Game.csproj.CoreCompileInputs.cache
+C:\Users\nobre\Desktop\games maneiros\ChurchVania\game\obj\Debug\net8.0\Game.sourcelink.json
+C:\Users\nobre\Desktop\games maneiros\ChurchVania\game\obj\Debug\net8.0\Game.dll
+C:\Users\nobre\Desktop\games maneiros\ChurchVania\game\obj\Debug\net8.0\refint\Game.dll
+C:\Users\nobre\Desktop\games maneiros\ChurchVania\game\obj\Debug\net8.0\Game.pdb
+C:\Users\nobre\Desktop\games maneiros\ChurchVania\game\obj\Debug\net8.0\Game.genruntimeconfig.cache
+C:\Users\nobre\Desktop\games maneiros\ChurchVania\game\obj\Debug\net8.0\ref\Game.dll
