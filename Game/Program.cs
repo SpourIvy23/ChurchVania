@@ -4,6 +4,7 @@
 class Program
 {
     static bool play = true;
+    static string? papel;
     static Random random = new Random();
 
     //drop dos itens
@@ -19,13 +20,16 @@ class Program
 
     static string equipamentoAtual = "";
     //Atributos + Buffs e Debuffs
-    static int vida = 100;
+static int vidabase = 100;
+    static int vida = vidabase + bonus;
     static int defesa = 40;
     static int forcaBase = 50;
     static int velocidadeBase = 20;
     static int bonus = 0;
     static int penalidade = 0;
-    static int forçaTotal = forcaBase + bonus;
+
+    static int penalidadeForça = 0;
+    static int forçaTotal = (forcaBase + bonus) - penalidadeForça;
     static int velocidadeTotal = velocidadeBase - penalidade;
     //Inimigos
     static int danoRaquel = 15;
@@ -556,6 +560,181 @@ class Program
                     break;
             }
         }
+    }
+    static void TerceiroAndar()
+    { int escolha;
+    bool progressao = true;
+    
+        System.Console.WriteLine("Ao subrir as escadas para o terceiro andar você se encontra com três salas \n" +
+        "Uma na esquerda e outra na direita..e uma no meio..a que vai te levar até o topo da Igreja, se entrar nela não tem volta");
+        Console.ReadLine();
+    while(progressao)
+        System.Console.WriteLine("O que você vai fazer? \n" +
+        "1-Sala da esquerda \n" +
+        "2-Sala da direita \n" +
+        "3-Sala do meio \n" +
+        "4-Abrir menu");
+        int.TryParse(Console.ReadLine(), out escolha);
+        switch(escolha)
+        {
+            case 1: SalaSino();
+            break;
+            case 2:SalaCoracao();
+            break;
+            case 3:SalaFinal();
+            progressao = false;
+            break;
+
+        }
+    }
+    static void SalaSino()
+    {
+        int escolha;
+        bool progressao = true;
+
+        Console.Clear();
+        System.Console.WriteLine("Você entra na sala do sino e se depara com uma estrutura antiga, ainda intacta apesar do tempo. O sino enferrujado pende no alto, e uma pintura de um homem de cabelos loiros, essa pintura parece esconder algo brilhante atrás dela.");
+        Console.ReadLine();
+        while (progressao)
+        {
+            Console.WriteLine("O que vai fazer agora? \n" +
+            "1- Pintura \n" +
+            "2- Armário antigo \n" +
+            "3- Abrir Menu \n" +
+            "4- Voltar");
+            int.TryParse(Console.ReadLine(), out escolha);
+            switch (escolha)
+            {
+                case 1:
+                    if (!eventosConcluidos[7])
+                    {
+                        System.Console.WriteLine("Você encontra um saco cheio de moedas preciosas e muito brilhantes... Talvez elas possam ser úteis.");
+                        Console.ReadLine();
+                        Inventory("Moedas", 5);
+                        eventosConcluidos[7] = true;
+                    }
+                    else
+                    {
+                        Console.Clear();
+                        System.Console.WriteLine("Só sobrou poeira... \n" +
+                        "ATCHOOOO");
+                        Console.ReadLine();
+                    }
+                    break;
+                case 2:
+
+                    if (!eventosConcluidos[8] || !eventosConcluidos[9])
+                    {
+                        if (ItemChave("Tinta"))
+                        {
+                            while (papel == "")
+                            {
+                                System.Console.WriteLine("Você encontrou um pedaço de papel velho. pode escrever qualquer coisa nele. \n" +
+                                "Escreva algo!");
+                                papel = Console.ReadLine();
+                                
+                            }
+                            Inventory("Tinta", -1);
+                                Console.ReadLine();
+                        }
+                        else if (eventosConcluidos[9])
+                        {
+                            Console.ReadLine();
+                            System.Console.WriteLine("Você escreveu" + papel);
+                            Console.ReadLine();
+                        }
+                        System.Console.WriteLine("Você encontrou um pedaço de papel velho. Se tiver tinta, poderá escrever qualquer coisa nele.");
+                        Console.ReadLine();
+                        Inventory("Papel Mágico", 1);
+                        eventosConcluidos[8] = true;
+                    }
+
+                    else if (eventosConcluidos[8])
+                    {
+                        Console.Clear();
+                        System.Console.WriteLine("Você já vasculhou aqui antes.");
+                        Console.ReadLine();
+                    }
+                    break;
+                case 3:
+                    Menu();
+                    break;
+                case 4:
+                    progressao = false;
+                    break;
+            }
+        }
+    }
+    static void SalaCoracao()
+    {
+        int escolha;
+        bool stay = true;
+        Console.Clear();
+        System.Console.WriteLine("Você entra em uma sala grotesca. No centro, um coração ainda pulsando está suspenso por correntes. Há uma prateleira antiga cheia de objetos estranhos.");
+        while (stay)
+        {
+            System.Console.WriteLine("O que vai fazer agora? \n" +
+            "1- Examinar o coração pulsante \n" +
+            "2- Vasculhar a prateleira \n" +
+            "3- Abrir Menu \n" +
+            "4- Sair da sala");
+            int.TryParse(Console.ReadLine(), out escolha);
+            switch (escolha)
+            {
+                case 1:
+                    if (!eventosConcluidos[10])
+                    {
+                        System.Console.WriteLine("Ao tocar o coração, você sente uma força esquisita drenando sua energia. Algo está errado aqui...");
+                        vida -=20;
+                        Console.ReadLine();
+                        if(vida==0)
+                        {
+                            GameOver();
+                        }
+                        else
+                        {
+                        eventosConcluidos[10] = true;
+                        }
+                    }
+                    else
+                    {
+                        Console.Clear();
+                        System.Console.WriteLine("O coração parece menos ativo agora, mas continua pulsando lentamente.");
+                        Console.ReadLine();
+                    }
+                    break;
+                case 2:
+                    if (!eventosConcluidos[11])
+                    {
+                        System.Console.WriteLine("Você encontra um amuleto coberto de sangue seco. Parece que ele possui algum tipo de poder.");
+                        Console.ReadLine();
+                        Inventory("Amuleto", 1);
+                        eventosConcluidos[11] = true;
+                    }
+                    else
+                    {
+                        Console.Clear();
+                        System.Console.WriteLine("A prateleira está vazia.");
+                        Console.ReadLine();
+                    }
+                    break;
+                case 3:
+                    Menu();
+                    break;
+                case 4:
+                    stay = false;
+                    break;
+            }
+        }
+    }
+    static void SalaFinal()
+    { 
+        System.Console.WriteLine("Você se encontra na sala que talvez o leve para o final da igreja.. \n" +
+        "Você vê um pequeno demoniozinho do lado com aparentemente uma loja de itens!");
+        Console.ReadLine();
+        System.Console.WriteLine("Mas parece ser tudo lixo inutil..é bom você seguir em frente");
+        Console.ReadLine();
+          
     }
 
     //BossFight Raquel
