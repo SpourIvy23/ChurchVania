@@ -779,7 +779,7 @@ class Program
                     Console.ReadLine();
                     BossRaquel();
                     break;
-                default: System.Console.WriteLine("Zumbi:VAI SE DECIDIR NÃ?!?!");
+                default: System.Console.WriteLine("Zumbi:VAI SE DECIDIR NÃO?!?!");
                 break;
             }
 
