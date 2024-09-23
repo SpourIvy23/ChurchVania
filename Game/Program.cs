@@ -31,8 +31,7 @@ class Program
     static int penalidadeForça = 0;
     static int forçaTotal = (forcaBase + bonus) - penalidadeForça;
     static int velocidadeTotal = velocidadeBase - penalidade;
-    //Inimigos
-    static int danoRaquel = 15;
+   
 
 
     static void Main()
@@ -58,6 +57,8 @@ class Program
                     SegundoAndar();
                     TerceiroAndar();
                     TesteForça();
+                    Topo();
+                    Creditos();
 
                     break;
                 case 2:
@@ -572,6 +573,7 @@ class Program
         "Uma na esquerda e outra na direita..e uma no meio..a que vai te levar até o topo da Igreja, se entrar nela não tem volta");
         Console.ReadLine();
         while (progressao)
+        {
             System.Console.WriteLine("O que você vai fazer? \n" +
             "1-Sala da esquerda \n" +
             "2-Sala da direita \n" +
@@ -592,6 +594,7 @@ class Program
                 break;
 
         }
+    }
     }
     static void SalaSino()
     {
@@ -1206,6 +1209,7 @@ class Program
 
                     resultadosComuns++;
                     Console.WriteLine($"Resultado comum. Você tem {resultadosComuns} resultados comuns.");
+                    Console.ReadLine();
 
                     // Verifica se o jogador venceu com 4 resultados comuns
                     if (resultadosComuns == 4)
@@ -1242,9 +1246,9 @@ class Program
 
                     System.Console.WriteLine("Você falhou!!");
                     System.Console.ReadLine();
-                    System.Console.WriteLine("Você levou 15 de dano!!!");
+                    System.Console.WriteLine("Você levou 35 de dano!!!");
                     Console.ReadLine();
-                    vida -= 15;
+                    vida -= 35;
                     if (vida == 0)
                     {
                         GameOver();
