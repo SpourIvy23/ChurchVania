@@ -8,7 +8,7 @@ class Program
     static Random random = new Random();
 
     //drop dos itens
-    static bool[] eventosConcluidos = new bool[15];
+    static bool[] eventosConcluidos = new bool[16];
 
     //Negocio pro inventario
     static string[] nomesItens = new string[10];
@@ -615,12 +615,12 @@ class Program
             switch (escolha)
             {
                 case 1:
-                    if (!eventosConcluidos[7])
+                    if (!eventosConcluidos[11])
                     {
                         System.Console.WriteLine("Você encontra um saco cheio de moedas preciosas e muito brilhantes... Talvez elas possam ser úteis.");
                         Console.ReadLine();
                         Inventory("Moedas", 5);
-                        eventosConcluidos[7] = true;
+                        eventosConcluidos[11] = true;
                     }
                     else
                     {
@@ -632,7 +632,7 @@ class Program
                     break;
                 case 2:
 
-                    if (!eventosConcluidos[8] || !eventosConcluidos[9])
+                    if (!eventosConcluidos[12] || !eventosConcluidos[13])
                     {
                         if (ItemChave("Tinta"))
                         {
@@ -646,7 +646,7 @@ class Program
                             Inventory("Tinta", -1);
                             Console.ReadLine();
                         }
-                        else if (eventosConcluidos[9])
+                        else if (eventosConcluidos[13])
                         {
                             Console.ReadLine();
                             System.Console.WriteLine("Você escreveu" + papel);
@@ -658,7 +658,7 @@ class Program
                         eventosConcluidos[8] = true;
                     }
 
-                    else if (eventosConcluidos[8])
+                    else if (eventosConcluidos[12])
                     {
                         Console.Clear();
                         System.Console.WriteLine("Você já vasculhou aqui antes.");
@@ -691,7 +691,7 @@ class Program
             switch (escolha)
             {
                 case 1:
-                    if (!eventosConcluidos[10])
+                    if (!eventosConcluidos[14])
                     {
                         System.Console.WriteLine("Ao tocar o coração, você sente uma força esquisita drenando sua energia. Algo está errado aqui...");
                         vida -= 20;
@@ -702,7 +702,7 @@ class Program
                         }
                         else
                         {
-                            eventosConcluidos[10] = true;
+                            eventosConcluidos[14] = true;
                         }
                     }
                     else
@@ -713,12 +713,12 @@ class Program
                     }
                     break;
                 case 2:
-                    if (!eventosConcluidos[11])
+                    if (!eventosConcluidos[15])
                     {
                         System.Console.WriteLine("Você encontra um amuleto coberto de sangue seco. Parece que ele possui algum tipo de poder.");
                         Console.ReadLine();
                         Inventory("Amuleto", 1);
-                        eventosConcluidos[11] = true;
+                        eventosConcluidos[15] = true;
                     }
                     else
                     {
@@ -1289,11 +1289,11 @@ class Program
             Console.WriteLine("\nRealizando teste...");
             Console.ReadLine();
 
-            // Simula o lançamento de um D20
-            int resultadoDado = random.Next(1, 21); // Gera um número de 1 a 20
+            
+            int resultadoDado = random.Next(1, 21); 
             int resultadoFinal = resultadoDado;
 
-            // Soma o atributo de velocidade se o resultado não for 20 (sucesso crítico)
+            
             if (resultadoDado != 20)
             {
                 resultadoFinal += forçaTotal;
@@ -1304,7 +1304,7 @@ class Program
 
             if (resultadoDado == 20)
             {
-                // Sucesso crítico
+                
                 Console.WriteLine("Sucesso crítico! Você quebrou a barreira com apenas um ataque!!!!");
                 venceu = true;
             }
@@ -1312,11 +1312,11 @@ class Program
             {
                 if (resultadoFinal < 20)
                 {
-                    // Resultado comum
+                    
                     resultadosComuns++;
                     Console.WriteLine($"Resultado comum. Você tem {resultadosComuns} resultados comuns.");
 
-                    // Verifica se o jogador venceu com 4 resultados comuns
+                    
                     if (resultadosComuns == 4)
                     {
                         Console.WriteLine("Você alcançou 4 resultados comuns e conseguiu quebrar a barreira!!");
@@ -1325,7 +1325,7 @@ class Program
                 }
                 else
                 {
-                    // Falha
+                    
                     Console.WriteLine("Você falhou! Parece que a barreira absorve um pouco de sua vida com cada falha..");
                     vida -= 40;
                     if (vida == 0)
