@@ -918,6 +918,7 @@ class Program
             Console.ReadLine();
             System.Console.WriteLine("Você levou um tiro!!! \n" +
             "-15 de vida");
+            vida-=15;
             Console.ReadLine();
             BossRaquel();
         }
@@ -1264,7 +1265,7 @@ class Program
                     System.Console.WriteLine("Você levou 35 de dano!!!");
                     Console.ReadLine();
                     vida -= 35;
-                    if (vida == 0)
+                    if (vida <= 0)
                     {
                         GameOver();
                     }
@@ -1348,7 +1349,7 @@ class Program
 
                     Console.WriteLine("Você falhou! Parece que a barreira absorve um pouco de sua vida com cada falha..");
                     vida -= 40;
-                    if (vida == 0)
+                    if (vida <= 0)
                     {
                         GameOver();
                     }
