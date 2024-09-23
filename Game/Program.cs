@@ -56,6 +56,8 @@ static int vidabase = 100;
                     Tutorial();
                     PrimeiroAndar();
                     SegundoAndar();
+                    TerceiroAndar();
+                    TesteForça();
 
                     break;
                 case 2:
@@ -737,6 +739,9 @@ static int vidabase = 100;
           
     }
 
+    //miniboss
+
+
     //BossFight Raquel
     static void Raquel()
     {
@@ -1246,6 +1251,71 @@ static int vidabase = 100;
         Console.ReadLine();
         play = false;
         
+    }
+    static void TesteForça()
+    {
+        Random random = new Random();
+        int resultadosComuns = 0;
+        bool venceu = false;
+    
+
+        Console.WriteLine("No meio do caminho você se encontra com uma demonia atrás de uma barreira magica \n" +
+        "Ela não deixará você passar..você vai ter que destruir a barreira se quiser chegar até o feiticeiro maligno.. \n" +
+        "Você deverá realizar agora um teste de força!!");
+        Console.ReadLine();
+
+        // Loop para o jogador continuar jogando até que vença
+        while (!venceu)
+        {
+            Console.WriteLine("\nRealizando teste...");
+            Console.ReadLine();
+
+            // Simula o lançamento de um D20
+            int resultadoDado = random.Next(1, 21); // Gera um número de 1 a 20
+            int resultadoFinal = resultadoDado;
+
+            // Soma o atributo de velocidade se o resultado não for 20 (sucesso crítico)
+            if (resultadoDado != 20)
+            {
+                resultadoFinal += forçaTotal;
+            }
+
+            Console.WriteLine($"Você rolou: {resultadoDado}");
+            Console.WriteLine($"Resultado final com velocidade: {resultadoFinal}");
+
+            if (resultadoDado == 20)
+            {
+                // Sucesso crítico
+                Console.WriteLine("Sucesso crítico! Você quebrou a barreira com apenas um ataque!!!!");
+                venceu = true;
+            }
+            else if (resultadoFinal < 30)
+            {
+                if (resultadoFinal < 20)
+                {
+                    // Resultado comum
+                    resultadosComuns++;
+                    Console.WriteLine($"Resultado comum. Você tem {resultadosComuns} resultados comuns.");
+
+                    // Verifica se o jogador venceu com 4 resultados comuns
+                    if (resultadosComuns == 4)
+                    {
+                        Console.WriteLine("Você alcançou 4 resultados comuns e conseguiu quebrar a barreira!!");
+                        venceu = true;
+                    }
+                }
+                else
+                {
+                    // Falha
+                    Console.WriteLine("Você falhou! Parece que a barreira absorve um pouco de sua vida com cada falha..");
+                    vida-=40;
+                    if(vida==0)
+                    {
+                        GameOver();
+                    }
+                }
+            }
+        }
     }
 }
 
