@@ -1426,7 +1426,7 @@ class Program
         "Joanna Nobre-Programadora,Roteirista,Designer de personagem \n" +
         "Arthur Gabriel-Programador \n" +
         "Alice-Supervisora \n" +
-        "Hideo Kojima- Diretor \n");
+        "Hideo Kojima- Diretor do jogo \n");
     }
 }
 
