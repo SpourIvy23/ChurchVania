@@ -151,6 +151,7 @@ class Program
                     }
                     else
                     {
+                        Console.Clear();
                         System.Console.WriteLine("Vasconzelos:Essa era minha ultima kunai..boa sorte!!");
                         Console.ReadLine();
                     }
@@ -713,7 +714,8 @@ class Program
                     {
                         System.Console.WriteLine("Você encontra um amuleto coberto de sangue seco. Parece que ele possui algum tipo de poder.");
                         Console.ReadLine();
-                        Inventory("Amuleto", 1);
+                        Equip("Amuleto");
+                        Console.ReadLine();
                         eventosConcluidos[14] = true;
                     }
                     else
@@ -1147,6 +1149,11 @@ class Program
                     Console.ReadLine();
                     break;
 
+                case "amuleto":
+                    bonus = 50;
+                    penalidade = 0;
+                    Console.ReadLine();
+                    break;
                 default:
                     Console.WriteLine("Este item não pode ser equipado.");
                     break;
@@ -1291,9 +1298,9 @@ class Program
 
                     System.Console.WriteLine("Você falhou!!");
                     System.Console.ReadLine();
-                    System.Console.WriteLine("Você levou 35 de dano!!!");
+                    System.Console.WriteLine("Você levou 15 de dano!!!");
                     Console.ReadLine();
-                    vida -= 35;
+                    vida -= 15;
                     if (vida <= 0)
                     {
                         GameOver();
@@ -1330,13 +1337,12 @@ class Program
         while (vida > 0 && !acertou)
         {
 
-                    Console.WriteLine("Digite um número entre 1 e 5:");
+            Console.WriteLine("Digite um número entre 1 e 5:");
 
             if (int.TryParse(Console.ReadLine(), out palpite) && palpite >= 1 && palpite <= 5)
             {
 
-                
-                int.TryParse(Console.ReadLine(), out palpite);
+
             }
 
             if (palpite == nucleoCorreto)
@@ -1356,8 +1362,8 @@ class Program
             GameOver();
         }
     }
-    
-    
+
+
     static void Spades()
     {
         Random random = new Random();
