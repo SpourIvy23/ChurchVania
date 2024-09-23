@@ -31,7 +31,7 @@ class Program
     static int penalidadeForça = 0;
     static int forçaTotal = (forcaBase + bonus) - penalidadeForça;
     static int velocidadeTotal = velocidadeBase - penalidade;
-   
+
 
 
     static void Main()
@@ -223,7 +223,7 @@ class Program
                 case 3:
                     System.Console.WriteLine("Você encontra as escadas que levam para o segundo andar, elas estão bloqueadas por um portão");
                     Console.ReadLine();
-                    if (ItemChave("Chave Amaldiçoada"))
+                    if (ItemChave("Chave Amaldiçoada", 1))
                     {
                         System.Console.WriteLine("Felizmente você tem a chave certa para abrir esses portões! você a usa e sobe");
                         Console.ReadLine();
@@ -321,7 +321,7 @@ class Program
                 case 1:
                     if (!eventosConcluidos[5])
                     {
-                        if (ItemChave("Chave Suspeita"))
+                        if (ItemChave("Chave Suspeita", 1))
                         {
                             System.Console.WriteLine("Você conseguiu abrir a porta!!");
                             Console.ReadLine();
@@ -561,6 +561,8 @@ class Program
                 case 2:
                     SegundoAndar();
                     break;
+                default: Sala6();
+                break;
             }
         }
     }
@@ -579,22 +581,22 @@ class Program
             "2-Sala da direita \n" +
             "3-Sala do meio \n" +
             "4-Abrir menu");
-        int.TryParse(Console.ReadLine(), out escolha);
-        switch (escolha)
-        {
-            case 1:
-                SalaSino();
-                break;
-            case 2:
-                SalaCoracao();
-                break;
-            case 3:
-                SalaFinal();
-                progressao = false;
-                break;
+            int.TryParse(Console.ReadLine(), out escolha);
+            switch (escolha)
+            {
+                case 1:
+                    SalaSino();
+                    break;
+                case 2:
+                    SalaCoracao();
+                    break;
+                case 3:
+                    SalaFinal();
+                    progressao = false;
+                    break;
 
+            }
         }
-    }
     }
     static void SalaSino()
     {
@@ -632,36 +634,20 @@ class Program
                     break;
                 case 2:
 
-                    if (!eventosConcluidos[12] || !eventosConcluidos[13])
+                    if (!eventosConcluidos[12])
                     {
-                        if (ItemChave("Tinta"))
-                        {
-                            while (papel == "")
-                            {
-                                System.Console.WriteLine("Você encontrou um pedaço de papel velho. pode escrever qualquer coisa nele. \n" +
-                                "Escreva algo!");
-                                papel = Console.ReadLine();
-
-                            }
-                            Inventory("Tinta", -1);
-                            Console.ReadLine();
-                        }
-                        else if (eventosConcluidos[13])
-                        {
-                            Console.ReadLine();
-                            System.Console.WriteLine("Você escreveu" + papel);
-                            Console.ReadLine();
-                        }
-                        System.Console.WriteLine("Você encontrou um pedaço de papel velho. Se tiver tinta, poderá escrever qualquer coisa nele.");
+                        System.Console.WriteLine("Você encontra um papel escrito ''Plano para dominar o mundo'' \n" +
+                        "Parece que foi escrito por uma criança de 5 anos");
                         Console.ReadLine();
-                        Inventory("Papel Mágico", 1);
-                        eventosConcluidos[8] = true;
+                        Inventory("Plano idiota", 1);
+                        Console.ReadLine();
+                        eventosConcluidos[12] = true;
                     }
 
-                    else if (eventosConcluidos[12])
+                    else 
                     {
                         Console.Clear();
-                        System.Console.WriteLine("Você já vasculhou aqui antes.");
+                        System.Console.WriteLine("Você devia vandalizar o papel.");
                         Console.ReadLine();
                     }
                     break;
@@ -691,7 +677,7 @@ class Program
             switch (escolha)
             {
                 case 1:
-                    if (!eventosConcluidos[14])
+                    if (!eventosConcluidos[13])
                     {
                         System.Console.WriteLine("Ao tocar o coração, você sente uma força esquisita drenando sua energia. Algo está errado aqui...");
                         vida -= 20;
@@ -702,7 +688,7 @@ class Program
                         }
                         else
                         {
-                            eventosConcluidos[14] = true;
+                            eventosConcluidos[13] = true;
                         }
                     }
                     else
@@ -713,12 +699,12 @@ class Program
                     }
                     break;
                 case 2:
-                    if (!eventosConcluidos[15])
+                    if (!eventosConcluidos[14])
                     {
                         System.Console.WriteLine("Você encontra um amuleto coberto de sangue seco. Parece que ele possui algum tipo de poder.");
                         Console.ReadLine();
                         Inventory("Amuleto", 1);
-                        eventosConcluidos[15] = true;
+                        eventosConcluidos[14] = true;
                     }
                     else
                     {
@@ -757,6 +743,7 @@ class Program
         Console.ReadLine();
         System.Console.WriteLine("Feiticeiro:Então vamos logo com isso");
         Console.ReadLine();
+        Console.ReadLine();
         Spades();
 
     }
@@ -774,7 +761,7 @@ class Program
         "Zumbi:Isso aqui é uma farinha magica que me foi entrega pelo feiticeiro maligno ok?!");
         Console.ReadLine();
         System.Console.WriteLine("Zumbi:MAAAAS se você tivesse um pouco de grana..eu posso considerar te deixar ir..");
-        if (ItemChave("Moedas"))
+        if (ItemChave("Moedas", 5))
         {
             int escolha;
 
@@ -834,7 +821,8 @@ class Program
             int.TryParse(Console.ReadLine(), out escolha);
             switch (escolha)
             {
-                case 1:
+                case 1:if(ItemChave("Moedas", 5))
+                {
                     Console.Clear();
                     System.Console.WriteLine("Zumbi:Poxa..Acho que você não dá tanto valor assim pra vida");
                     Console.ReadLine();
@@ -844,28 +832,52 @@ class Program
                     espaçosVazios = 1;
                     Console.ReadLine();
                     progressao = false;
+                }
+                else
+                {
+                    System.Console.WriteLine("voce nao vai ver isso");
+                }
                     break;
                 case 2:
-                    Console.Clear();
-                    System.Console.WriteLine("Zumbi:Vamos ver se a sorte tá do seu lado..");
-                    Console.ReadLine();
-                    Inventory("Moedas", -10);
-                    Console.ReadLine();
-                    System.Console.WriteLine("Ela esvaziou dois tambores");
-                    espaçosVazios = 2;
-                    Console.ReadLine();
-                    progressao = false;
+                    if (ItemChave("Moedas", 10))
+                    {
+                        Console.Clear();
+                        System.Console.WriteLine("Zumbi:Vamos ver se a sorte tá do seu lado..");
+                        Console.ReadLine();
+                        Inventory("Moedas", -10);
+                        Console.ReadLine();
+                        System.Console.WriteLine("Ela esvaziou dois tambores");
+                        espaçosVazios = 2;
+                        Console.ReadLine();
+                        progressao = false;
+                    }
+                    else
+                    {
+                        Console.Clear();
+                        System.Console.WriteLine("Zumbi:TA TENTANDO ME ENGANAR É?!?!?!?");
+                        Console.ReadLine();
+                    }
                     break;
+
                 case 3:
-                    Console.Clear();
-                    System.Console.WriteLine("Zumbi:Boa escolha pivete!");
-                    Console.ReadLine();
-                    Inventory("Moedas", -15);
-                    Console.ReadLine();
-                    System.Console.WriteLine("Ela esvaziou 3 tambores..");
-                    espaçosVazios = 3;
-                    Console.ReadLine();
-                    progressao = false;
+                    if (ItemChave("Moedas", 15))
+                    {
+                        Console.Clear();
+                        System.Console.WriteLine("Zumbi:Boa escolha pivete!");
+                        Console.ReadLine();
+                        Inventory("Moedas", -15);
+                        Console.ReadLine();
+                        System.Console.WriteLine("Ela esvaziou 3 tambores..");
+                        espaçosVazios = 3;
+                        Console.ReadLine();
+                        progressao = false;
+                    }
+                    else
+                    {
+                        Console.Clear();
+                        System.Console.WriteLine("Zumbi:TA TENTANDO ME ENGANAR É?!?!?!?");
+                        Console.ReadLine();
+                    }
                     break;
                 case 4:
                     Menu();
@@ -1020,13 +1032,16 @@ class Program
         contadorItens--;
 
     }
-    static bool ItemChave(string itemChave)
+    static bool ItemChave(string itemChave, int quantidadePrecisa)
     {
         for (int i = 0; i < contadorItens; i++)
         {
             if (nomesItens[i] == itemChave)
             {
-                return true;
+                if (quantidadesItens[i] >= quantidadePrecisa)
+                {
+                    return true;
+                }
             }
 
         }
@@ -1268,6 +1283,8 @@ class Program
         "Você foi incapaz de parar o caos causado pelo Feiticeiro..ele conseguiu completar seu plano e limpou o vilarejo em um instante.. \n" +
         "Será que você conseguria..se tivesse mais uma chance?");
         Console.ReadLine();
+        Creditos();
+        Console.ReadLine();
         play = false;
 
     }
@@ -1283,49 +1300,52 @@ class Program
         "Você deverá realizar agora um teste de força!!");
         Console.ReadLine();
 
-        // Loop para o jogador continuar jogando até que vença
         while (!venceu)
         {
             Console.WriteLine("\nRealizando teste...");
             Console.ReadLine();
 
-            
-            int resultadoDado = random.Next(1, 21); 
+
+            int resultadoDado = random.Next(1, 21);
             int resultadoFinal = resultadoDado;
 
-            
+
             if (resultadoDado != 20)
             {
                 resultadoFinal += forçaTotal;
             }
 
             Console.WriteLine($"Você rolou: {resultadoDado}");
-            Console.WriteLine($"Resultado final com velocidade: {resultadoFinal}");
+            Console.WriteLine($"Resultado final foi {resultadoFinal}");
+            Console.ReadLine();
 
             if (resultadoDado == 20)
             {
-                
+
                 Console.WriteLine("Sucesso crítico! Você quebrou a barreira com apenas um ataque!!!!");
+                Console.ReadLine();
                 venceu = true;
             }
             else if (resultadoFinal < 30)
             {
                 if (resultadoFinal < 20)
                 {
-                    
+
                     resultadosComuns++;
                     Console.WriteLine($"Resultado comum. Você tem {resultadosComuns} resultados comuns.");
+                    Console.ReadLine();
 
-                    
+
                     if (resultadosComuns == 4)
                     {
                         Console.WriteLine("Você alcançou 4 resultados comuns e conseguiu quebrar a barreira!!");
+                        Console.ReadLine();
                         venceu = true;
                     }
                 }
                 else
                 {
-                    
+
                     Console.WriteLine("Você falhou! Parece que a barreira absorve um pouco de sua vida com cada falha..");
                     vida -= 40;
                     if (vida == 0)
@@ -1404,7 +1424,6 @@ class Program
         "Joanna Nobre-Programadora,Roteirista,Designer de personagem \n" +
         "Arthur Gabriel-Programador \n" +
         "Alice-Supervisora \n" +
-        "Davi Fortaleza- \n" +
         "Hideo Kojima- Diretor \n");
     }
 }
