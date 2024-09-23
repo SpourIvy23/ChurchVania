@@ -4,7 +4,6 @@
 class Program
 {
     static bool play = true;
-    static string? papel;
     static Random random = new Random();
 
     //drop dos itens
@@ -83,7 +82,7 @@ class Program
 
         System.Console.WriteLine("Seu nome é " + player + " Você é um aventureiro que veio investigar suposta aparição de monstros em uma vila do inteiror \n" +
       "Quando você chega na vila você consegue observar o estado decaído da vila, as casas parecem ter sido recentemente queimadas e poucas pessoas parecem ter sobrevivido \n" +
-      "Talvez você devesse conversar com eles");
+      "Talvez você devesse conversar com eles.");
         while (progressao)
         {
             System.Console.WriteLine("Escolha oque fazer ou com quem conversar: \n" +
