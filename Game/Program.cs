@@ -7,7 +7,7 @@ class Program
     static Random random = new Random();
 
     //drop dos itens
-    static bool[] eventosConcluidos = new bool[16];
+    static bool[] eventosConcluidos = new bool[18];
 
     //Negocio pro inventario
     static string[] nomesItens = new string[10];
@@ -28,9 +28,14 @@ class Program
     static int penalidade = 0;
 
     static int penalidadeForça = 0;
-    static int forçaTotal = (forcaBase + bonus) - penalidadeForça;
+    static int forçaTotal = forcaBase + bonus;
     static int velocidadeTotal = velocidadeBase - penalidade;
 
+static void AtualizarStatus()
+{   vida = vidabase + bonus;
+    forçaTotal = forcaBase + bonus - penalidadeForça;
+    velocidadeTotal = Math.Max(0,velocidadeBase - penalidade);
+}
 
 
     static void Main()
@@ -965,7 +970,6 @@ class Program
                 case 1:
                     Console.Clear();
                     Status();
-                    Console.ReadLine();
                     break;
                 case 2:
                     Console.Clear();
@@ -995,7 +999,7 @@ class Program
     }
     static void Status()
     {
-
+            AtualizarStatus();
         Console.WriteLine("Seus status são \n" +
         "VIDA: " + vida + "\n" +
         "FORÇA: " + forçaTotal + "\n" +
@@ -1119,7 +1123,7 @@ class Program
             switch (equipamento)
             {
                 case "espada":
-                    bonus = 20;
+                    bonus += 20;
                     penalidade = 0;
                     equipamentoAtual = "espada";
                     Console.WriteLine("Você equipou a Espada. +20 de força!");
@@ -1127,32 +1131,33 @@ class Program
                     break;
 
                 case "machado":
-                    bonus = 30;
-                    penalidade = 10;
+                    bonus += 30;
+                    penalidade += 10;
                     equipamentoAtual = "machado";
                     Console.WriteLine("Você equipou o Machado. +30 de força e -10 de velocidade!");
                     Console.ReadLine();
                     break;
 
                 case "kunai":
-                    bonus = 10;
+                    bonus += 10;
                     penalidade = 0;
                     equipamentoAtual = "kunai";
                     Console.WriteLine("Você equipou a Kunai. +10 de força!");
                     Console.ReadLine();
                     break;
                 case "pistola":
-                    bonus = 40;
-                    penalidade = 20;
+                    bonus += 40;
+                    penalidade += 20;
                     equipamentoAtual = "pistola";
                     System.Console.WriteLine("Você equipou a Pistola. +40 de força e -20 de velocidade!");
                     Console.ReadLine();
                     break;
-
+  
                 case "amuleto":
-                    bonus = 50;
-                    penalidade = 0;
+                    bonus += 50;
+                    penalidadeForça += 20;
                     Console.ReadLine();
+                    System.Console.WriteLine("Você equipou o Amuleto. +50 de vida e -20 de força!");
                     break;
                 default:
                     Console.WriteLine("Este item não pode ser equipado.");
@@ -1337,7 +1342,7 @@ class Program
         while (vida > 0 && !acertou)
         {
 
-            Console.WriteLine("Digite um número entre 1 e 5:");
+            Console.WriteLine("Digite um número entre 1 a 5:");
 
             if (int.TryParse(Console.ReadLine(), out palpite) && palpite >= 1 && palpite <= 5)
             {
@@ -1352,8 +1357,8 @@ class Program
             }
             else
             {
-                vida -= 45;
-                Console.WriteLine($"Errou! Você levou 35 de dano.");
+                vida -= 15;
+                Console.WriteLine($"Errou! Você levou 15 de dano.");
             }
         }
 
