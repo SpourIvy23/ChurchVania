@@ -20,22 +20,25 @@ class Program
     static string equipamentoAtual = "";
     //Atributos + Buffs e Debuffs
     static int vidabase = 100;
-    static int vida = vidabase + bonus;
+    static int vida = vidabase;
     static int defesa = 40;
     static int forcaBase = 50;
     static int velocidadeBase = 20;
     static int bonus = 0;
+    static int bonusVida = 0;
+
     static int penalidade = 0;
 
     static int penalidadeForça = 0;
     static int forçaTotal = forcaBase + bonus;
     static int velocidadeTotal = velocidadeBase - penalidade;
 
-static void AtualizarStatus()
-{   vida = vidabase + bonus;
-    forçaTotal = forcaBase + bonus - penalidadeForça;
-    velocidadeTotal = Math.Max(0,velocidadeBase - penalidade);
-}
+    static void AtualizarStatus()
+    {
+        vida = vidabase + bonusVida;
+        forçaTotal = forcaBase + bonus - penalidadeForça;
+        velocidadeTotal = Math.Max(0, velocidadeBase - penalidade);
+    }
 
 
     static void Main()
@@ -715,18 +718,24 @@ static void AtualizarStatus()
                     }
                     break;
                 case 2:
-                    if (!eventosConcluidos[14])
+                    if (eventosConcluidos[13] && !eventosConcluidos[14])
                     {
-                        System.Console.WriteLine("Você encontra um amuleto coberto de sangue seco. Parece que ele possui algum tipo de poder.");
+                        System.Console.WriteLine("Você encontra um amuleto coberto de seu proprio sangue Parece que ele possui algum tipo de poder.");
                         Console.ReadLine();
                         Equip("Amuleto");
                         Console.ReadLine();
                         eventosConcluidos[14] = true;
                     }
-                    else
+                    else if (!eventosConcluidos[13] && !eventosConcluidos[14])
                     {
                         Console.Clear();
-                        System.Console.WriteLine("A prateleira está vazia.");
+                        System.Console.WriteLine("Você encontra um amuleto estranho...mas não parece fazer nada");
+                        Console.ReadLine();
+                    }
+                    else if (eventosConcluidos[13] && eventosConcluidos[14])
+                    {
+                        Console.Clear();
+                        System.Console.WriteLine("A pratileira está vazia");
                         Console.ReadLine();
                     }
                     break;
@@ -999,7 +1008,7 @@ static void AtualizarStatus()
     }
     static void Status()
     {
-            AtualizarStatus();
+        AtualizarStatus();
         Console.WriteLine("Seus status são \n" +
         "VIDA: " + vida + "\n" +
         "FORÇA: " + forçaTotal + "\n" +
@@ -1152,12 +1161,12 @@ static void AtualizarStatus()
                     System.Console.WriteLine("Você equipou a Pistola. +40 de força e -20 de velocidade!");
                     Console.ReadLine();
                     break;
-  
+
                 case "amuleto":
-                    bonus += 50;
+                    bonusVida += 50;
                     penalidadeForça += 20;
-                    Console.ReadLine();
                     System.Console.WriteLine("Você equipou o Amuleto. +50 de vida e -20 de força!");
+                    Console.ReadLine();
                     break;
                 default:
                     Console.WriteLine("Este item não pode ser equipado.");
@@ -1260,7 +1269,7 @@ static void AtualizarStatus()
             }
             else if (resultadoFinal < 30)
             {
-                if (resultadoFinal < 20)
+                if (resultadoDado < 20)
                 {
 
                     resultadosComuns++;
